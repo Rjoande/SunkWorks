@@ -23,15 +23,12 @@ SunkWorks requires Harmony for KSP. Be sure to download Harmony for KSP before d
 You can find it here: https://github.com/KSPModdingLibs/HarmonyKSP
 And on CKAN.
 
-New Parts
-
-- SW-PH1 Boat Hull: This is a single-part, flat-bottomed procedural boat hull with a LOT of configurability.
-
 Changes
 
-- Removed the deprecated boat hull parts.
+- Fixed NullReferenceIssue exception generated when a kerbal carries SCUBA Gear but doesn't have one of the SCUBA suits on.
+- Changed the Water Wings, Liquid Breathing Pack, and SCUBA Gear parts to use ModuleCargoPart instead of ModuleGroundPart.
 
---END CHANGES--
+---END CHANGES---
 
 ---LICENSE---
 Art Assets, including .mu, .png, and .dds files are copyright 2021 by Michael Billard, All Rights Reserved.

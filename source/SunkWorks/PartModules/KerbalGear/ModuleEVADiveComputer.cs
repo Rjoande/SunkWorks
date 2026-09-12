@@ -509,8 +509,13 @@ namespace SunkWorks.KerbalGear
             {
                 List<ProtoCrewMember> vesselCrew = vessel.GetVesselCrew();
                 ProtoCrewMember crew = vesselCrew.Count > 0 ? vesselCrew[0] : null;
-                if (crew != null && divingSuitPressures.ContainsKey(crew.ComboId))
-                    part.maxPressure = divingSuitPressures[crew.ComboId];
+                float suitMaxPressure;
+                if (crew != null &&
+                    !string.IsNullOrEmpty(crew.ComboId) &&
+                    divingSuitPressures.TryGetValue(crew.ComboId, out suitMaxPressure))
+                {
+                    part.maxPressure = suitMaxPressure;
+                }
             }
         }
 
